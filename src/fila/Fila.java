@@ -52,4 +52,12 @@ public class Fila<T> extends EstruturaEstatica<T> {
         return sb.toString();
     }
     
+    
+    public T get(int posicao) {
+    if (posicao < 0 || posicao >= this.tamanho) {
+        throw new IllegalArgumentException("Posição inválida");
+    }
+    return this.elementos[posicao];
+}
+    
 }
