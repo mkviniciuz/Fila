@@ -1,20 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package fila;
 
-/**
- *
- * @author Vinicius
- */
-public class Fila {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Fila<T> extends EstruturaEstatica<T> {
+    public Fila(){
+        super();
+    }
+    
+    public Fila(int capacidade){
+        super(capacidade);
+    }
+    
+    public void enfileira(T elemento) {
+        this.adiciona(elemento);
+    }
+    
+    public T espiar() {
+        if (this.estaVazia()){
+            return null;
+        }
+        return this.elementos[0];
+    }
+    
+    public T desenfileira(){
+        if (this.estaVazia()){
+            return null;
+        }
+        
+        final int POS = 0;
+        
+        T elementoASerRemovido = this.elementos[POS];
+        this.remove(POS);
+        return elementoASerRemovido;
     }
     
 }
