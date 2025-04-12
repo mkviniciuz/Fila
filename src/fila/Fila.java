@@ -32,4 +32,24 @@ public class Fila<T> extends EstruturaEstatica<T> {
         return elementoASerRemovido;
     }
     
+    @Override
+    public String toString() {
+        if (this.estaVazia()) {
+            return "[]";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        for (int i = 0; i < this.tamanho - 1; i++) {
+            sb.append(this.elementos[i]);
+            sb.append(", ");
+        }
+
+        sb.append(this.elementos[this.tamanho - 1]);
+        sb.append("]");
+
+        return sb.toString();
+    }
+    
 }
